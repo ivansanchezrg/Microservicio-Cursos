@@ -6,9 +6,28 @@
                 <h1 class="card-title">{{h.nombre}}</h1>
                 <h6 class="card-subtitle mb-2 text-muted">Tutor: {{h.nombreInstructor}} <br> Costo: {{h.costo}}</h6>
                 <p class="card-text">{{h.descripcion}}</p>
-                <a href="../login/" class="card-link">Matricularse</a>
+                <button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Matricularse</button>
             </div>
         </div>
     </div>
 
 </div>
+
+<!-- modal donde recepta el nombre del evento tras la aprobacion del mismo -->
+<ng-template #aprobar let-c="close" let-d="dismiss">
+    <div class="modal-header text-center">
+        <h1>Confirmación de datos para matricularse</h1>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+  
+    <div class="modal-body">
+        <input type="text" class="form-control text-center" id="nombre" placeholder="Nombre">
+        <input type="email" class="form-control text-center" id="mail" placeholder="Correo electrónico">
+    </div>
+  
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btnDerecha" >Guardar</button>
+        <button type="button" class="btn btn-danger btnDerecha" (click)="c('Close click')">Cancelar</button>
+    </div>
+  
+  </ng-template>
