@@ -13,7 +13,7 @@ export class CursosComponent {
   constructor(private http: HttpClient, config: NgbModalConfig, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8002/').subscribe((response) =>{
+    this.http.get('http://localhost:8060/cursos').subscribe((response) =>{
       this.cursos = response;
       console.log(response);
     });

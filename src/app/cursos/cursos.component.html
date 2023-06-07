@@ -6,7 +6,8 @@
                 <h1 class="card-title">{{h.nombre}}</h1>
                 <h6 class="card-subtitle mb-2 text-muted">Tutor: {{h.nombreInstructor}} <br> Costo: {{h.costo}}</h6>
                 <p class="card-text">{{h.descripcion}}</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Matricularse</button>
+                <div><button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Registrarse como Estudiante</button></div><br>
+                <div><button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Registrarse como Profesor</button></div>
             </div>
         </div>
     </div>
@@ -21,6 +22,7 @@
     </div>
   
     <div class="modal-body">
+        <p>Datos para registrarse en una materia</p>
         <input type="text" class="form-control text-center" id="nombre" placeholder="Nombre">
         <input type="email" class="form-control text-center" id="mail" placeholder="Correo electrónico">
     </div>
