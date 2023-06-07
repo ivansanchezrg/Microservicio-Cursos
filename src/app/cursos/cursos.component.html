@@ -1,17 +1,22 @@
 <div class="container">
-
-    <div class="m-4 d-flex align-items-center justify-content-center" *ngFor="let h of cursos">
-        <div class="card" style="width: 18rem;" >
-            <div class="card-body">
-                <h1 class="card-title">{{h.nombre}}</h1>
-                <h6 class="card-subtitle mb-2 text-muted">Tutor: {{h.nombreInstructor}} <br> Costo: {{h.costo}}</h6>
-                <p class="card-text">{{h.descripcion}}</p>
-                <button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Matricularse</button>
+    <div class="col-md-12 py-3">
+        <div class="row">
+            <div class="col-md-4 py-3" *ngFor="let h of cursos">
+                <div class="card" >
+                    <div class="card-body" align="center">
+                        <h1 class="card-title">{{h.nombre}}</h1>
+                        <p class="card-subtitle mb-2 text-muted">Tutor: {{h.nombreInstructor}} <br> Costo: {{h.costo}}</p>
+                        <p class="card-text">{{h.descripcion}}</p>
+                        <div align="center">
+                            <button type="button" class="btn btn-primary" (click)="openModal(aprobar)">Matricularse</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
+
 
 <!-- modal donde recepta el nombre del evento tras la aprobacion del mismo -->
 <ng-template #aprobar let-c="close" let-d="dismiss">
