@@ -1,6 +1,54 @@
 <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
         <span class="navbar-brand h1">CURSOS DISPONIBLES</span>
+        <button type="button" class="btn btn-warning" (click)="openModal(aprobar)">Nuevo Curso</button>
+    </div>
+    <div>
+        
     </div>
 </nav>
 <router-outlet></router-outlet>
+
+
+
+<!-- modal donde recepta el nombre del evento tras la aprobacion del mismo -->
+<ng-template #aprobar let-c="close" let-d="dismiss">
+    <div class="modal-header text-center">
+        <h1>Crear nuevo Curso</h1>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+  
+    <div class="modal-body">
+        <b>Ingrese los datos del curso...</b>
+        <div class="py-3">
+            <input type="text" class="form-control text-center" id="nombre" placeholder="Nombre">
+        </div>
+        
+        <div class="py-3">
+            <input type="email" class="form-control text-center" id="mail" placeholder="Correo electrónico">
+        </div>
+
+        <div class="py-3">
+            <input type="text" class="form-control text-center" id="instructor" placeholder="Instructor">
+        </div>
+
+        <div class="py-3">
+            <input type="number" class="form-control text-center" id="costo" placeholder="Costo">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descripción:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        
+        
+        
+    </div>
+  
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btnDerecha" >Confirmar</button>
+        <button type="button" class="btn btn-danger btnDerecha" (click)="c('Close click')">Cancelar</button>
+    </div>
+  
+  </ng-template>
